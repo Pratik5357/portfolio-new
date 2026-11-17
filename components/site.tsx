@@ -28,7 +28,6 @@ const SECTION_NAMES: Record<string, string> = {
   about: "About",
   experience: "Experience",
   side: "Side projects",
-  building: "Next",
   stack: "Stack",
   contact: "Contact",
 };

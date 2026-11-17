@@ -8,7 +8,7 @@ img{max-width:100%}
 :root{
   --bg:#ffffff; --fg:#111317; --muted:#525a63; --rule:#e1e4e8; --soft:#f1f3f5;
   --l1:#c2410c; --l2:#1f4fd1; --l3:#6b3fc0; --l4:#0b7680; --l5:#8a5300; --l6:#1f7a3a; --l7:#be123c; --l8:#475569;
-  --p1:#c2410c; --p2:#1f4fd1; --p3:#6b3fc0; --p4:#0b7680; --p5:#8a5300; --p6:#1f7a3a; --p7:#be123c; --p8:#475569;
+  --p1:#c2410c; --p2:#1f4fd1; --p3:#6b3fc0; --p4:#0b7680; --p5:#8a5300; --p6:#1f7a3a; --p7:#be123c; --p8:#475569; --p9:#a21caf;
   --on-panel:#ffffff; --on-panel-dim:rgba(255,255,255,.92);
   --desk:#08090b; --inv-bg:#111317; --inv-fg:#eef0f2; --inv-muted:#a6aeb7; --inv-rule:#2a2e35; --inv-soft:#1a1d22;
   /* type roles */
@@ -62,14 +62,14 @@ html:root.t-soft.t-soft{--bg:var(--soft)}
 
 /* marks: a line's colour drawn on the page itself (badges, mini lines, menu dots). Panels keep the deep
    --p* (they carry white text); marks follow the ground under them: deep on light grounds, bright on dark. */
-:root{--m1:#c2410c;--m2:#1f4fd1;--m3:#6b3fc0;--m4:#0b7680;--m5:#8a5300;--m6:#1f7a3a;--m7:#be123c;--m8:#475569;--m-ink:#ffffff}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--m1:#f2742f;--m2:#6b93ff;--m3:#a283f0;--m4:#2bb3b8;--m5:#d99a2b;--m6:#45b264;--m7:#fb5a7e;--m8:#9aa8bb;--m-ink:#0e1013}}
-:root[data-theme="dark"]{--m1:#f2742f;--m2:#6b93ff;--m3:#a283f0;--m4:#2bb3b8;--m5:#d99a2b;--m6:#45b264;--m7:#fb5a7e;--m8:#9aa8bb;--m-ink:#0e1013}
-html.t-inv,.menu{--m1:#f2742f;--m2:#6b93ff;--m3:#a283f0;--m4:#2bb3b8;--m5:#d99a2b;--m6:#45b264;--m7:#fb5a7e;--m8:#9aa8bb;--m-ink:#111317}
-@media (prefers-color-scheme: dark){html:root:not([data-theme="light"]).t-inv,:root:not([data-theme="light"]) .menu{--m1:#c2410c;--m2:#1f4fd1;--m3:#6b3fc0;--m4:#0b7680;--m5:#8a5300;--m6:#1f7a3a;--m7:#be123c;--m8:#475569;--m-ink:#ffffff}}
-:root[data-theme="dark"].t-inv,:root[data-theme="dark"] .menu{--m1:#c2410c;--m2:#1f4fd1;--m3:#6b3fc0;--m4:#0b7680;--m5:#8a5300;--m6:#1f7a3a;--m7:#be123c;--m8:#475569;--m-ink:#ffffff}
+:root{--m1:#c2410c;--m2:#1f4fd1;--m3:#6b3fc0;--m4:#0b7680;--m5:#8a5300;--m6:#1f7a3a;--m7:#be123c;--m8:#475569;--m9:#a21caf;--m-ink:#ffffff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--m1:#f2742f;--m2:#6b93ff;--m3:#a283f0;--m4:#2bb3b8;--m5:#d99a2b;--m6:#45b264;--m7:#fb5a7e;--m8:#9aa8bb;--m9:#e26bf0;--m-ink:#0e1013}}
+:root[data-theme="dark"]{--m1:#f2742f;--m2:#6b93ff;--m3:#a283f0;--m4:#2bb3b8;--m5:#d99a2b;--m6:#45b264;--m7:#fb5a7e;--m8:#9aa8bb;--m9:#e26bf0;--m-ink:#0e1013}
+html.t-inv,.menu{--m1:#f2742f;--m2:#6b93ff;--m3:#a283f0;--m4:#2bb3b8;--m5:#d99a2b;--m6:#45b264;--m7:#fb5a7e;--m8:#9aa8bb;--m9:#e26bf0;--m-ink:#111317}
+@media (prefers-color-scheme: dark){html:root:not([data-theme="light"]).t-inv,:root:not([data-theme="light"]) .menu{--m1:#c2410c;--m2:#1f4fd1;--m3:#6b3fc0;--m4:#0b7680;--m5:#8a5300;--m6:#1f7a3a;--m7:#be123c;--m8:#475569;--m9:#a21caf;--m-ink:#ffffff}}
+:root[data-theme="dark"].t-inv,:root[data-theme="dark"] .menu{--m1:#c2410c;--m2:#1f4fd1;--m3:#6b3fc0;--m4:#0b7680;--m5:#8a5300;--m6:#1f7a3a;--m7:#be123c;--m8:#475569;--m9:#a21caf;--m-ink:#ffffff}
 
-html.t-soft .ticks li,html.t-soft .facts{background:transparent}
+html.t-soft .facts{background:transparent}
 
 
 .hdr-page{position:relative;display:inline-flex;overflow:hidden;height:1.4em;margin-right:auto;margin-left:14px;opacity:.85}
@@ -101,10 +101,6 @@ html.hdr-on-panel:not(.menu-open) :is(.hdr-page,.hdr-time){opacity:1}
 .hero-row{display:flex;flex-wrap:wrap;gap:36px 64px;align-items:flex-start;justify-content:space-between;margin-top:clamp(28px,4vw,52px)}
 .hero-copy{flex:1 1 400px;min-width:0}
 .hero-intro{max-width:30ch;font-size:var(--fs-lede);line-height:1.45;margin:0}
-.hero-status{display:flex;align-items:flex-start;gap:12px;max-width:34ch;margin:22px 0 0;font-size:var(--fs-body);line-height:1.5}
-.hero-status b{font-weight:700}
-/* a station ring: on the network, taking passengers */
-.stn{flex:none;margin-top:calc(.75em - 7px);width:14px;height:14px;border-radius:50%;border:3px solid var(--fg);background:var(--bg)}
 .hero-intro strong{font-weight:700}
 .hero-cta{display:flex;flex-wrap:wrap;gap:10px;align-self:flex-end}
 
@@ -144,17 +140,6 @@ html.hdr-on-panel:not(.menu-open) :is(.hdr-page,.hdr-time){opacity:1}
 .row-go{justify-self:end;transition:transform .22s var(--ease-out)}
 .row:focus-visible .row-go{transform:translate(4px,-4px)}
 @media (max-width:860px){.row{grid-template-columns:40px minmax(0,1fr) 28px;padding:22px 8px}.row-name{font-size:clamp(26px,7.4vw,56px)}.row-hook{grid-column:2 / 4;grid-row:2}.row-go{grid-column:3;grid-row:1}}
-
-/* under construction */
-.build-card{border:3px dashed var(--fg);border-radius:28px;padding:clamp(24px,4vw,56px);display:flex;flex-wrap:wrap;gap:28px 64px;background:repeating-linear-gradient(-45deg,transparent 0 22px,var(--soft) 22px 44px)}
-.build-card>div{flex:1 1 380px;min-width:0}
-.build-title{font-size:var(--fs-d-s);margin-top:14px}
-.build-card p{margin:16px 0 0;max-width:46ch}
-.tag{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--fg);color:var(--bg)}
-.ticks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-.ticks li{padding:16px 20px;border-radius:16px;background:var(--bg);border:1.5px solid var(--rule);line-height:1.5}
-.ticks li b{display:block;margin-bottom:4px}
-
 
 /* about */
 .about-lead{font-size:clamp(20px,1.8vw,26px);line-height:1.4;font-weight:600;margin:0 0 18px;max-width:34ch;text-wrap:pretty}

@@ -12,7 +12,6 @@ const SECTIONS: [string, string][] = [
   ["/#about", "About"],
   ["/#experience", "Experience"],
   ["/#side", "Side projects"],
-  ["/#building", "Next"],
   ["/#contact", "Contact"],
 ];
 

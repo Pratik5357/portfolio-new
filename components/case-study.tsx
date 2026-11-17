@@ -42,7 +42,7 @@ export function CaseStudy({ line: l, hasResume }: { line: Line; hasResume: boole
   /* by id: `line` arrives as a serialized copy from the server, so it's never === an entry in LINES */
   const back = backFor(l);
   const nx = LINES[(LINES.findIndex((x) => x.id === l.id) + 1) % LINES.length];
-  const src = l.live ? "Public on GitHub" : "Private (client work, details anonymised)";
+  const src = l.source ? "Public on GitHub" : "Private (client work, details anonymised)";
 
   /* move focus to the new page's hero (named by its title), like a real page load; the next Tab lands on the back link */
   useEffect(() => {
@@ -87,12 +87,14 @@ export function CaseStudy({ line: l, hasResume }: { line: Line; hasResume: boole
                 <dd className="data">{l.stops.length}</dd>
               </dl>
             </motion.div>
-            {l.live && (
+            {l.source && (
               <motion.div className="d-links" {...rise(0.28)}>
-                <a className="solid" href={l.demo} target="_blank" rel="noopener">
-                  Open live demo <ArrowUpRight />
-                </a>
-                <a href={l.source} target="_blank" rel="noopener">
+                {l.demo && (
+                  <a className="solid" href={l.demo} target="_blank" rel="noopener">
+                    Open live demo <ArrowUpRight />
+                  </a>
+                )}
+                <a className={l.demo ? undefined : "solid"} href={l.source} target="_blank" rel="noopener">
                   Source on GitHub <ArrowUpRight />
                 </a>
               </motion.div>
@@ -142,9 +144,9 @@ export function CaseStudy({ line: l, hasResume }: { line: Line; hasResume: boole
             </motion.div>
           </Row>
           {/* a convinced reader shouldn't have to go back to the home page to get in touch */}
-          <Row title="Hiring for backend?">
+          <Row title="Get in touch">
             <motion.div className="hire" variants={rowKid}>
-              <p>Email or LinkedIn works best. There’s no form, on purpose.</p>
+              <p>Questions about this project, or want to talk backend? Email or LinkedIn works best.</p>
               <div className="btns">
                 <a className="btn btn-solid" href={`mailto:${EMAIL}`}>
                   Email me

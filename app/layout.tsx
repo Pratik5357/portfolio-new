@@ -17,7 +17,7 @@ const data = Martian_Mono({ subsets: ["latin"], weight: ["400", "500"], variable
 export const metadata: Metadata = {
   title: "Pratik Kumbhar",
   description:
-    "Backend developer on a credit-report order-to-delivery platform: .NET APIs, SQL Server, integrations and background jobs.",
+    "Backend developer building B2B order-to-delivery systems: .NET APIs, SQL Server, integrations and background jobs.",
 };
 
 export const viewport: Viewport = { viewportFit: "cover" };

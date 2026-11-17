@@ -10,10 +10,10 @@ const STACK: [string, string][] = [
   ["Backend", "ASP.NET Core 8 Web API, ASP.NET Web API 2 on OWIN, .NET Framework 4.6.1, C#, layered architecture, API versioning, middleware"],
   ["Data", "SQL Server, T-SQL, EF6 code-first migrations, EF Core, Dapper, keyset paging, parameter-sniffing fixes"],
   ["Background jobs", "Hangfire queues, worker limits, recurring and delayed jobs, retries, distributed locks, batch backfills"],
-  ["Integrations", "RingCentral, Zoho CRM, Stripe, Microsoft Graph, AI validation and summary services, Zamzar"],
+  ["Integrations", "Telephony and CRM REST APIs, Stripe, Microsoft Graph, AI services, webhooks, file conversion"],
   ["Auth", "JWT, OAuth 2.0 (authorization code, refresh token, client credentials), webhook signatures, rate limiting"],
   ["Documents", "XSLT (Saxon), HTML to PDF (NReco), Word (OpenXML), Azure Blob Storage"],
-  ["Personal builds", "PostgreSQL, SignalR, Next.js, TypeScript, React, Node.js, Express, MongoDB, xUnit, GitHub Actions"],
+  ["Personal builds", ".NET 10, PostgreSQL, RabbitMQ, Redis, OpenTelemetry, SignalR, Next.js, TypeScript, React, Node.js, Express, MongoDB, xUnit, GitHub Actions"],
 ];
 
 /* from the résumé */
@@ -43,10 +43,6 @@ export default function Home() {
             <HeroIn i={0} className="hero-copy">
               <p className="hero-intro">
                 <strong>Backend developer</strong> working in .NET and SQL Server, currently at Tudip Technologies.
-              </p>
-              <p className="hero-status">
-                <span className="stn" aria-hidden="true" />
-                <b>Open to backend roles.</b>
               </p>
             </HeroIn>
             <HeroIn i={1} className="hero-cta">
@@ -114,8 +110,8 @@ export default function Home() {
               <span className="data">Mar 2025 – present</span>
             </div>
             <p className="job-scope">
-              Backend work for a business credit-report company: production fixes, improvements and new features on their internal
-              portal (.NET Framework, SQL Server, Hangfire), plus the newer .NET 8 services that bring orders in and send reports out.
+              Backend work for a B2B data and reporting client: production fixes, improvements and new features on their internal
+              portal (.NET Framework, SQL Server, Hangfire), plus newer .NET 8 services that bring orders in and deliver results out.
             </p>
           </Reveal>
           <p className="sel-h data">Selected work</p>
@@ -130,44 +126,10 @@ export default function Home() {
               Side projects
             </Reveal>
             <Reveal as="p" className="sec-lede">
-              Built on my own time, end to end. Both are live and the code is public.
+              Built on my own time, end to end. The code is public, and RelayForge and Ethix are live.
             </Reveal>
           </div>
           <SideIndex />
-        </div>
-      </section>
-
-      <section className="sec" id="building" data-page="Next" data-theme="inv" aria-labelledby="build-title">
-        <div className="wrap">
-          <Reveal className="build-card">
-            <div>
-              <span className="tag data">Under construction · design drafted Sep 2026</span>
-              <Reveal as="h2" kind="title" className="build-title disp" id="build-title">
-                24-hour report orchestrator
-              </Reveal>
-              <p>
-                A separate application that will own the workflow for a guaranteed 24-hour report, while the portal stays the system
-                of record. Development hasn’t started, so there are no outcomes to claim yet.
-              </p>
-            </div>
-            <ul className="ticks">
-              <li>
-                <b>Idempotent commands</b>The portal exposes create copy, allocate, field patch and finalise; a claim flag allows one
-                workflow per order, even with retries.
-              </li>
-              <li>
-                <b>Two clocks</b>A fixed 24-hour customer deadline, plus timers per stage for researcher, checker, AI and callbacks.
-              </li>
-              <li>
-                <b>Async AI jobs</b>Submit, get <span className="data">202</span> and a job ID, then a signed callback with a polling
-                fallback. No HTTP call is held open.
-              </li>
-              <li>
-                <b>Safe rollout</b>Row-version concurrency, writes in shadow mode first, flags per report type, and five researcher
-                checkpoints before anything AI-suggested is saved.
-              </li>
-            </ul>
-          </Reveal>
         </div>
       </section>
 
@@ -199,7 +161,7 @@ export default function Home() {
           <Reveal className="contact-row">
             <div>
               <CopyEmail email={EMAIL} />
-              <p style={{ marginTop: 12 }}>Hiring for backend? Email or LinkedIn works best. There’s no form, on purpose.</p>
+              <p style={{ marginTop: 12 }}>Want to talk backend, or about something here? Email or LinkedIn works best. There’s no form, on purpose.</p>
             </div>
             <div className="btns">
               {HAS_RESUME && (
